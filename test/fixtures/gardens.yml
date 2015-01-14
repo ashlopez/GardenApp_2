@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  veggies_fruit: MyString
+  quantity: 1
+  location: MyString
+
+two:
+  veggies_fruit: MyString
+  quantity: 1
+  location: MyString
