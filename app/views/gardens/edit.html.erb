@@ -1,0 +1,14 @@
+<h1>Make changes to this garden </h1>
+
+    <%= form_for @garden do |g| %>
+
+        Name: <%= g.text_field :name %>
+        Location: <%= g.text_field :location %>
+        
+       
+
+        <%= g.submit "Submit these changes!" %>
+
+    <% end %> 
+
+   

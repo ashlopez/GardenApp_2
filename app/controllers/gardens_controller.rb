@@ -1,7 +1,7 @@
 class GardensController < ApplicationController
 	
 	def show
-		@gardens=Garden.find(params[:id])
+		@garden = Garden.find(params[:id])
 	end
 
 	def index
@@ -14,7 +14,7 @@ class GardensController < ApplicationController
 
 
 	def create
-		@gardens = Garden.new(params.require (:garden).permit(:name, :location))
+		@gardens = Garden.new(params.require(:garden).permit(:name, :location))
 		
 		if @gardens.save
         redirect_to gardens_path
@@ -39,8 +39,11 @@ class GardensController < ApplicationController
 	end
 
 	def edit
-		@gardens = Garden.find(params[:id])
+		@garden = Garden.find(params[:id])
 	end
 
-	
+	private
+	def user_params
+		params.require(:garden).permit(:name, :location)
+	end
 end

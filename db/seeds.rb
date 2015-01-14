@@ -7,8 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 puts "seeding DB"
 
-puts "destroy all preivous data"
-User.destroy_all
+#puts "destroy all preivous data"
+#User.destroy_all
 
 puts "seeding user DB"
 user=User.create([

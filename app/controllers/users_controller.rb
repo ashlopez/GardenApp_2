@@ -16,7 +16,7 @@ class UsersController < ApplicationController
 
 		if @users.save
 			redirect_to users_path
-		els
+		else
         	render "new"
       	end
 	end
