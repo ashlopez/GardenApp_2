@@ -6,7 +6,7 @@ class Garden
   field :location, type: String
   has_and_belongs_to_many :users
 
-  has_many :vegetable
+  embeds_many :vegetables
 end
 
 
