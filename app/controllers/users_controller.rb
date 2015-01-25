@@ -13,7 +13,10 @@ class UsersController < ApplicationController
 	end
 
 	def show
-		@user = User.find(params[:id])
+		@user = User.find(params[:user_id])
+		# params passes the user ID as a hash then finds the user object with the params and the user instance
+	    # varible allows us to do methods on a particular user object within the view
+	    # this is for th current viewer to see their own profile
 	end
 	
 

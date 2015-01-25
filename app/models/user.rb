@@ -8,10 +8,10 @@ class User
   attr_reader :password
   has_and_belongs_to_many :garden
 
-  #mount_uploader :image, ImageUploader
+  
 
 
- 
+ # This method uses bycrypt gem to encrypt password but does not save & encrypt and empty string
   def password=(unencrypted_password)
     unless unencrypted_password.empty?
   		 @password = unencrypted_password
@@ -19,7 +19,7 @@ class User
     end
   end  
 
-
+# This method uses bycrypt gem to authenticate user password when logging in 
   def authenticate(unencrypted_password)
     logger.debug(unencrypted_password)
     logger.debug(self)
