@@ -30,6 +30,19 @@ class UsersController < ApplicationController
         	render "new"
       	end
 	end
+
+	def edit
+      @users = User.find(params[:id])
+    end
+
+	def update
+ 		@users = User.find(params[:id])
+ 		if @users.update(user_params)
+    		redirect_to(@users)
+ 		 else
+    	render "edit"
+    	end
+	end
 	
 	
 	private
