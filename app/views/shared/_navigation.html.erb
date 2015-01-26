@@ -2,30 +2,23 @@
 	
 	<ul>
 
-		<li>
+		
 		<!--Below is the logic that adjusts the view to: 
 		
 		indicate  on the nav bar the current user's user_name when logged in and a logout link,
 		
-		if the user in not logged in, the nav bar will show 'Log In' link & 'Sign Up' link
-
-
-		 
-		 -->
+		if the user in not logged in, the nav bar will show 'Log In' link & 'Sign Up' link  -->
 		<% if logged_in? %>
 		
 		<p> <%= "Hi, #{current_user.user_name} "%></p>
   		<li><%= link_to 'Log Out', logout_path, method: :delete %></li>
   		<li> <%= link_to "Look at the all the Gardens! ", gardens_path =%>  </li>
 		<li> <%= link_to "My Profile", user_path(current_user)  %> </li>
-
-		
+	
 		<% else %>
 		
-		<%= link_to 'Log In', login_path %>
-		<%= link_to 'Sign Up', signup_path %>
-
-		
+		<li><%= link_to 'Login', login_path %> </li>
+		<li><%= link_to 'Sign Up', signup_path %> </li>
 
 
 		<% end %>
@@ -34,8 +27,6 @@
 	    
 	    <!-- This section is static  regardless of current user login status and holds links to the Home  page and the garden model index page-->
 	    <li><%= link_to_unless_current("Home", root_path) { "" } %></li>
-	    
-	   
 	</ul>
 
 </div>
