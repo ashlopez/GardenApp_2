@@ -6,7 +6,8 @@ class User
 
   field :password_digest, type: String
   attr_reader :password
-  has_and_belongs_to_many :garden
+  #has_and_belongs_to_many :garden
+  
 
   
 

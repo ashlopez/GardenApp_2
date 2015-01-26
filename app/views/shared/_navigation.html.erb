@@ -18,11 +18,17 @@
   	
   		<%= link_to 'Log Out', logout_path, method: :delete %>
   		<li> <%= link_to "Look at the all the Gardens! ", gardens_path =%>  </li>
+
+		<%= link_to 'My Profile', '/users/:user_name' %>
+
 		
 		<% else %>
 		
 		<%= link_to 'Log In', login_path %>
 		<%= link_to 'Sign Up', signup_path %>
+
+		
+
 
 		<% end %>
 		
