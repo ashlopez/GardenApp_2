@@ -2,9 +2,13 @@
 
 
 <%= form_for @users do |f| %>
-    
+    <div>
     User Name: <%= f.text_field :user_name %>
+	</div>
+
+	<div>
     Email: <%= f.text_field :email %>
-        
+   </div>
+<%= f.submit "Update" %>
   
   <% end %>
