@@ -15,11 +15,9 @@
 		<% if logged_in? %>
 		
 		<p> <%= "Hi, #{current_user.user_name} "%></p>
-  	
-  		<%= link_to 'Log Out', logout_path, method: :delete %>
+  		<li><%= link_to 'Log Out', logout_path, method: :delete %></li>
   		<li> <%= link_to "Look at the all the Gardens! ", gardens_path =%>  </li>
-
-		<%= link_to 'My Profile', '/users/:user_name' %>
+		<li> <%= link_to "My Profile", user_path(current_user)  %> </li>
 
 		
 		<% else %>
@@ -37,7 +35,7 @@
 	    <!-- This section is static  regardless of current user login status and holds links to the Home  page and the garden model index page-->
 	    <li><%= link_to_unless_current("Home", root_path) { "" } %></li>
 	    
-	    
+	   
 	</ul>
 
 </div>
