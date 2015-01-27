@@ -10,5 +10,6 @@
     Email: <%= f.text_field :email %>
    </div>
 <%= f.submit "Update" %>
+<%= link_to "Delete Your Profile", :user, method: :delete, data: { confirm: "Are you sure you want to delete your profile?"} %>
   
   <% end %>
