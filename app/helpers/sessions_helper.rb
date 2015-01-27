@@ -10,4 +10,9 @@ module SessionsHelper
     def logged_in?
   		session[:user_id] != nil
 	end
+
+	def destroy_session
+    session.delete(:user_id)
+    redirect_to login_path
+  	end
 end
