@@ -2,9 +2,14 @@
 
     <%= form_for @garden do |g| %>
 
+    	<div>
+    		<%= link_to "Add New Garden", new_garden_path  %>
+    	</div>
+
+    	<div>
         Name: <%= g.text_field :name %>
         Location: <%= g.text_field :location %>
-        
+        </div>
        
 
         <%= g.submit "Submit these changes!" %>

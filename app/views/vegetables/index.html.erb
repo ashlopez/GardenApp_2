@@ -1,1 +1,6 @@
 <h1> These are the Vegetables</h1>
+
+<% @gardens.each do|garden| %>
+		<li>
+		<%= link_to "Name: #{veggtable.name}, Location: #{veggtable.location}", vegetable_path(veggtable.id) %>
+		</li>
