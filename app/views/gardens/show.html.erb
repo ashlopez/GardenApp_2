@@ -2,3 +2,13 @@
 
 <%= @garden.location %>
 <%= link_to "EDIT", edit_garden_path %>
+
+ <% @all_vegetables.each do|v| %> 
+
+
+
+<%= link_to "Add/Edit Veggies", edit_vegetable_path %>
+
+
+<p> THIS IS PRACTICE</p>
+ <% end %>

@@ -2,6 +2,7 @@ class GardensController < ApplicationController
 	
 	def show
 		@garden = Garden.find(params[:id])
+		@all_vegetables = @garden.vegetables
 	end
 
 	def index
@@ -41,6 +42,8 @@ class GardensController < ApplicationController
 	def edit
 		@garden = Garden.find(params[:id])
 	end
+
+	
 
 	private
 	def user_params

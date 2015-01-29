@@ -1,0 +1,19 @@
+new.html.erb
+ 
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  
+  <div>
+    <%= f.label :quantity%>
+    <%= f.text_field :quantity %>
+  </div>
+  
+  <div>
+    <%= f.submit "Veggies to share!" %>
+  </div>
+
+<% end %>
+
+<%= link_to "See all Veggies", gardens_path%>

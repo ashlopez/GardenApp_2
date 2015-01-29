@@ -1,0 +1,16 @@
+edit.html.erb
+
+<%= form_for @all_vegetables do |v| %>
+
+    	<div>
+    		<%= link_to "Add New Veggie", new_vegetable_path  %>
+    	</div>
+
+    	<div>
+        Name: <%= g.text_field :name %>
+        Location: <%= g.text_field : %>
+        </div>
+       
+
+        <%= g.submit "Submit" %>
+        <%= link_to "Delete Veggie", :veggie , method: :delete, data: { confirm: "Are you sure you want to delete this Veggie"} %>
