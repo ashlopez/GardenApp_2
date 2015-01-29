@@ -7,7 +7,7 @@ class VegetablesController < ApplicationController
 	end
 
 	def show
-		@vegetables=Vegetable.find(params[:id])
+		@vegetable=Vegetable.find(params[:id])
 	end
 
 	
@@ -18,14 +18,11 @@ class VegetablesController < ApplicationController
 
 
 	def create
-		@vegetables = Vegetable.new(params.require (:vegetable).permit(:name, :quantity))
-		
-		if 	@vegetables.save
-        redirect_to vegetables_path
-      	else
-        render "new"
-        end
-	end
+			@gardens = Garden.find(params[:garden_id])
+			@vegetables = @gardens.vegetables.create!(params[:vegetable])
+			 redirect_to @gardens, :notice => "Veggie created!"
+				
+	end			
 
 	def update
 		@vegetables = Vegetable.find(params[:id])
@@ -36,7 +33,7 @@ class VegetablesController < ApplicationController
 	end
 
 	def edit
-		@vegetables = Vegetable.find(params[:id])
+		@vegetable = Vegetable.find(params[:id])
 	end
 
 	def destroy
@@ -45,5 +42,5 @@ class VegetablesController < ApplicationController
 		redirect_to vegetables_path
 	end
 
-
+  
 end

@@ -1,19 +1,21 @@
-new.html.erb
+
  
+  <%= form_for Vegetable.new do |f| %>
+    
+   
+  
   <div>
     <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
   
   <div>
-    <%= f.label :quantity%>
+    <%= f.label :quantity %>
     <%= f.text_field :quantity %>
   </div>
   
   <div>
-    <%= f.submit "Veggies to share!" %>
+    <%= f.submit "Add Veggies!" %>
   </div>
 
-<% end %>
-
-<%= link_to "See all Veggies", gardens_path%>
+<% end%>

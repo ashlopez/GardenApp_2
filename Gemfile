@@ -5,6 +5,8 @@ gem 'rails_12factor'
 
 gem 'carrierwave'
 
+gem 'protected_attributes'
+
 gem 'bcrypt', '~> 3.1.9'
 gem 'mongoid', '~> 4.0.0'
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
