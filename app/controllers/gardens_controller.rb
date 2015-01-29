@@ -26,7 +26,7 @@ class GardensController < ApplicationController
 
 	def update
 		@gardens = Garden.find(params[:id])
-	    if @gardens.update_attributes(params.require (:garden).permit(:name, :location))
+	    if @gardens.update_attributes(params.require(:garden).permit(:name, :location))
 	    	redirect_to gardens_path
 	    else render "edit"
     	end

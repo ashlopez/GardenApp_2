@@ -1,18 +1,26 @@
 <h1> <%= @garden.name  %>   </h1>
 
-<%= @garden.location %>
-<%= link_to "EDIT", edit_garden_path %>
+<ul>
+	<li>
+	<%= @garden.location %>
+	</li>
 
- <% @all_vegetables.each do|v| %> 
+    <li>
+	<%= link_to "EDIT", edit_garden_path %>
+	</li>
+</ul>
 
 
-
+<% @all_vegetables.each do|v| %> 
+	 
+	<%= v.name %>
+	<%= v %>
 
 
 
  <% end %>
 
- <%= link_to "Add", new_vegetable_path %>
+ <%= link_to "Add Veggie", new_garden_vegetable_path(@garden) %>
 
 
  <p> THIS IS PRACTICE</p>

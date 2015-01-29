@@ -3,30 +3,35 @@ class VegetablesController < ApplicationController
 	
 
 	def index
-		@vegetables=Vegetable.all
+		@vegetables= @garden.vegetables.all
 	end
 
-	def show
-		@vegetable=Vegetable.find(params[:id])
-	end
+	#def show
+		#@vegetable=Vegetable.find(params[:id])
+	#end
 
 	
 
     def new
-	    @vegetables = Vegetable.new
+    	#@garden = Garden.find(params[:garden_id])
+	    @vegetables = @garden.vegetables.new
 	end
 
 
 	def create
-			@gardens = Garden.find(params[:garden_id])
-			@vegetables = @gardens.vegetables.create!(params[:vegetable])
-			 redirect_to @gardens, :notice => "Veggie created!"
+			@garden= Garden.find(params[:garden_id])
+			@vegetable = @garden.vegetable.create!(params[:vegetable])
+			if vegetable.save
+			 redirect_to @garden, :notice => "Veggie created!"
+			else
+				render "new"
+			end
 				
 	end			
 
 	def update
 		@vegetables = Vegetable.find(params[:id])
-	    if @vegetables.update_attributes(params.require (:vegetable).permit(:name, :quantity))
+	    if @vegetables.update_attributes(params.require(:vegetable).permit(:name, :quantity))
 	    	redirect_to vegetables_path
 	    else render "edit"
     	end

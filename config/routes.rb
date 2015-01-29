@@ -9,8 +9,9 @@ Rails.application.routes.draw do
     get '/login'     => 'sessions#new'
     post '/login'    => 'sessions#create'
     delete '/logout' => 'sessions#destroy'
-    resources :gardens
-    resources :vegetables
+    resources :gardens do
+      resources :vegetables
+    end
 
     
   # The priority is based upon order of creation: first created -> highest priority.
