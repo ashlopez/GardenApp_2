@@ -1,24 +1,24 @@
 
  
-  <%= form_for @garden do |f| %>
-    <%= f.fields_for :vegetable do |builder| %>
+  <%= form_for [@garden, @vegetable] do |f| %>
+    
       <div>
-        <%= builder.label :name %>
-        <%= builder.text_field :name %>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
       </div>
   
       <div>
-        <%= builder.label :quantity %>
-        <%= builder.text_field :quantity %>
+        <%= f.label :quantity %>
+        <%= f.text_field :quantity %>
       </div>
   
       <div>
-        <%= builder.submit "Add Veggies!" %>
+        <%= f.submit "Add Veggies!" %>
       </div>
 
     <% end%>
 
-<% end%>
+
 
 
 

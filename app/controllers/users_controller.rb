@@ -49,12 +49,6 @@ class UsersController < ApplicationController
 		@user.destroy
 		destroy_session
 		redirect_to login_path
-
-
-
-
-
-
 	end
 	
 	

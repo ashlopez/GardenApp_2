@@ -13,31 +13,39 @@ class VegetablesController < ApplicationController
 	
 
     def new
-    	#@garden = Garden.find(params[:garden_id])
-	    @vegetables = @garden.vegetables.new
+    	@garden = Garden.find(params[:garden_id])
+	    @vegetable = @garden.vegetables.new
 	end
 
 
 	def create
+		
 			@garden= Garden.find(params[:garden_id])
-			@vegetable = @garden.vegetable.create!(params[:vegetable])
-			if vegetable.save
-			 redirect_to @garden, :notice => "Veggie created!"
-			else
-				render "new"
-			end
+			# @vegetable = @garden.vegetable.create!(params[:vegetable])
+			@vegetable = @garden.vegetables.create(vegetables_params)
+			redirect_to @garden, :notice => "Veggie created!"
+
+			# if @vegetable.save
+			#  redirect_to @garden, :notice => "Veggie created!"
+			# else
+			# 	render "new"
+			# end
+
+			# post = Post.find(params[:post_id])
+			# comment = post.comments.create(comment_params)
 				
 	end			
 
 	def update
-		@vegetables = Vegetable.find(params[:id])
-	    if @vegetables.update_attributes(params.require(:vegetable).permit(:name, :quantity))
+		@vegetable = Vegetable.find(params[:id])
+	    if @vegetable.update_attributes(vegetables_params)
 	    	redirect_to vegetables_path
 	    else render "edit"
     	end
 	end
 
 	def edit
+		@garden = Garden.find(params[:garden_id])
 		@vegetable = Vegetable.find(params[:id])
 	end
 
@@ -47,5 +55,9 @@ class VegetablesController < ApplicationController
 		redirect_to vegetables_path
 	end
 
+	private 
+	def vegetables_params
+		params.require(:vegetable).permit(:name, :quantity)
+	end
   
 end

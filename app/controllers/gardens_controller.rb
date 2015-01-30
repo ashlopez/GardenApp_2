@@ -47,6 +47,7 @@ class GardensController < ApplicationController
 
 	private
 	def user_params
-		params.require(:garden).permit(:name, :location)
+		params.require(:garden).permit(:name, :location, :name, :quantity, :vegetables)
+
 	end
 end
