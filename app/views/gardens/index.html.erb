@@ -3,25 +3,18 @@
 	<li>
 		<%=link_to "Add a new Garden", new_garden_path %>
 	</li>
-	
-	
-
-
 
 <ul>
 	<% @gardens.each do|garden| %>
+		
 		<li>
-		<%= link_to "Name: #{garden.name}, Location: #{garden.location}", garden_path(garden.id) %>
-          </li>
+			<%= link_to "Name: #{garden.name}, Location: #{garden.location}", garden_path(garden.id) %>
+        </li>
         
         <li>
-		<%= link_to "edit", edit_garden_path(garden.id) %>
+			<%= link_to "edit", edit_garden_path(garden.id) %>
 	    </li>
 
-		 	<% end%>
+	<% end%>
 </ul>
 
-<a title="shopify site analytics"
-href="http://statcounter.com/shopify/" target="_blank"><img
-src="http://c.statcounter.com/10235692/0/e659b6e5/1/"
-alt="shopify site analytics" style="border:none;"></a>
